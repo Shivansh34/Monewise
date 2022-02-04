@@ -17,6 +17,11 @@ if(process.env.NODE_ENV==='development'){
     origin:process.env.CLIENT_URL
   }));
 }
+else{
+  app.use(cors({
+    origin:"https://moneywisebackend.herokuapp.com/"
+  }));
+}
 
 app.get("/", (req, res) => {
   res.json({ message: "API running..." });
